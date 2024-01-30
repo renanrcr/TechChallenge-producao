@@ -22,7 +22,7 @@ namespace API.Tests.Controllers
         {
             //Arrange
             var controllerPedido = new PedidoController(_notification.Object, _pedidoRepository);
-            string? numeroPedido = _pedidoRepository.ObterTodos().Result.FirstOrDefault().NumeroPedido;
+            string? numeroPedido = (_pedidoRepository.ObterTodos().Result.FirstOrDefault() ?? new()).NumeroPedido;
 
             //Act
             var result = controllerPedido.GetStatusPagamentoPedido(numeroPedido).Result;
@@ -36,7 +36,7 @@ namespace API.Tests.Controllers
         {
             //Arrange
             var controllerPedido = new PedidoController(_notification.Object, _pedidoRepository);
-            string? numeroPedido = _pedidoRepository.ObterTodos().Result.FirstOrDefault().NumeroPedido;
+            string? numeroPedido = (_pedidoRepository.ObterTodos().Result.FirstOrDefault() ?? new()).NumeroPedido;
 
             //Act
             var result = controllerPedido.PostStatusPedido(numeroPedido, (int)EStatusPedido.EM_PREPARACAO).Result;
