@@ -12,8 +12,6 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 
-//builder.Configuration.AddAmazonSecretsManager("us-east-1", "dev-techchallenge-terraform-terraform");
-
 var server = builder.Configuration["DbServer"] ?? "localhost";
 var port = builder.Configuration["DbPort"] ?? "1433"; // Default SQL Server port
 var user = builder.Configuration["DbUser"] ?? "SA"; // Warning do not use the SA account
