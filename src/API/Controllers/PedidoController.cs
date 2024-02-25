@@ -17,7 +17,7 @@ namespace API.Controllers
         }
 
         [HttpGet("StatusPagamentoPedido")]
-        public async Task<IActionResult?> GetStatusPagamentoPedido(string numeroDoPedido)
+        public async Task<IActionResult?> GetStatusPagamentoPedido(string? numeroDoPedido)
         {
             if (!ModelState.IsValid) return null;
 
@@ -27,7 +27,7 @@ namespace API.Controllers
         }
 
         [HttpPost("AtualizaStatusPedido")]
-        public async Task<IActionResult?> PostStatusPedido(string numeroDoPedido, int idStatusPedido)
+        public async Task<IActionResult?> PostStatusPedido(string? numeroDoPedido, int idStatusPedido)
         {
             if (!ModelState.IsValid) return null;
 
